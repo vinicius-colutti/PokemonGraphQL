@@ -1,0 +1,31 @@
+type Pokemon{
+    pokemon_id:ID
+    height:Float
+    weight:Float
+    attack:Int
+    defense:Int
+    category:PokemonCategory
+    types:[PokemonType]
+    weaknesses:[PokemonWeaknesses]
+}
+input PokemonInput{
+    pokemon_id:ID
+    height:Float
+    weight:Float
+    attack:Int
+    defense:Int
+    category_id:Long
+    types_ids:[Int]
+    weaknesses_ids:[Int]
+}
+
+scalar Long
+
+extend type Mutation {
+    savePokemon(input:PokemonInput): Pokemon
+}
+
+extend type Query {
+    getPokemonById(pokemon_id:Int): Pokemon
+    getListOfPokemon: [Pokemon]
+}

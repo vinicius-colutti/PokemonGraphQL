@@ -1,0 +1,11 @@
+type PokemonType{
+    type_id:ID
+    name:String
+}
+input PokemonTypeInput{
+    type_id:ID
+    name:String
+}
+extend type Mutation {
+    savePokemonType(input:PokemonTypeInput): PokemonType
+}

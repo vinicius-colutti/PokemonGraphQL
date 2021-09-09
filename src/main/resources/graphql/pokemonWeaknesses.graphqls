@@ -1,0 +1,12 @@
+type PokemonWeaknesses{
+    weaknesses_id:ID
+    name:String
+}
+
+input PokemonWeaknessesInput{
+    weaknesses_id:ID
+    name:String
+}
+extend type Mutation {
+    savePokemonWeaknesses(input:PokemonWeaknessesInput):PokemonWeaknesses
+}
